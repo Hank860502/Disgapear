@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20161026162725) do
 
   create_table "essays", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "topic"
     t.string   "description"
     t.string   "original"
@@ -27,7 +28,6 @@ ActiveRecord::Schema.define(version: 20161026162725) do
     t.string   "last_name"
     t.string   "first_name"
     t.string   "email"
-    t.integer  "essay_id"
     t.string   "image"
     t.boolean  "admin",           default: false
     t.string   "password_digest"
