@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'font-awesome-less'
+# gem 'font-awesome-less'
 # 10/26 added
 
 # Use ActiveModel has_secure_password
