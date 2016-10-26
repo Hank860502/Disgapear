@@ -1,0 +1,27 @@
+%h2 Login
+
+- flash.each do |message_type, message|
+  %div{:class => "alert alert-#{message_type}"}= message
+
+= form_for :session, url: login_path do |f|
+
+  -# - if @user.errors.any?
+  -#   - flash.each do |message_type, message|
+  -#     %div{:class => "alert alert-#{message_type}"}= message
+
+  .form-group
+    = f.label :email
+    %br
+    = f.text_field :email, class: 'form-control'
+
+  .form-group
+    = f.label :password
+    %br
+    = f.password_field :password, class: 'form-control'
+
+  .form-group
+    = f.submit :'Login', class: 'btn btn-success'
+
+= link_to 'Back', home_index_path
+%br
+= link_to "Don't have a account yet?", new_user_path
