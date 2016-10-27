@@ -7,33 +7,22 @@
   .form-group
     = f.label :topic
     %br
-    = f.text_field :topic, class: 'form-control'
+    = f.text_field :topic, class: 'form-control', placeholder: "What are you most excited about or looking forward to in your college experience?"
 
 
   .form-group
     = f.label :description
     %br
-    = f.text_field :description, class: 'form-control'
+    = f.text_field :description, class: 'form-control', placeholder: "Personal statement for Harvard University"
 
   .form-group
     = f.label :content
     %br
-    = f.text_field :original, class: 'form-control'
+    = f.text_area :original, class: 'form-control'
 
   .form-group
     = f.label :word_limit
     %br
-    = f.text_field :word_limit, class: 'form-control'
+    = f.number_field :word_limit, class: 'form-control'
   .form-group
     = f.submit :'submit', class: 'btn btn-success'
-
-
-/ .form-group.row
-/   %label.col-xs-2.col-form-label{:for => "Topic"} Topic
-/   .col-xs-10
-/     %input#example-text-input.form-control{:type => "text", :placeholder => "What are you most excited about or looking forward to in your college experience?"}/
-
-/ .form-group.row
-/   %label.col-xs-2.col-form-label{:for => "description"} Description
-/   .col-xs-10
-/     %input#example-search-input.form-control{:type => "search", :placeholder => "Personal statement for Harvard University"}/
