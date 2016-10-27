@@ -7,9 +7,6 @@ class UsersController < ApplicationController
   end
 
   def create
-  	p "=================="
-  	p user_params
-  	p "=================="
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
