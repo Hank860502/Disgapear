@@ -29,7 +29,10 @@
 				%h1.cover-heading Disgapear
 				%p.lead Disgapear is an online essay editing service. We hope to break down language barriers and narrow down cultural divides for those who are not English native speakers.
 				%p.lead
-					%a.btn.btn-lg.btn-default{:href => new_essay_path} Send your essay
+					-if logged_in
+						%a.btn.btn-lg.btn-default{:href => new_essay_path} Send your essay
+					-else
+						%a.btn.btn-lg.btn-default{:href => login_path} Send your essay
 			.mastfoot
 				.inner
 					%p
