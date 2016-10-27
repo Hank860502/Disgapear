@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20161026162725) do
     t.integer  "user_id"
     t.string   "topic"
     t.string   "description"
-    t.string   "original"
+    t.string   "content"
     t.string   "revision"
     t.integer  "word_limit"
     t.datetime "created_at",  null: false

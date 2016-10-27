@@ -4,7 +4,7 @@ class CreateEssays < ActiveRecord::Migration
       t.integer :user_id
     	t.string :topic
     	t.string :description
-    	t.string :original
+    	t.string :content
     	t.string :revision
     	t.integer :word_limit
 

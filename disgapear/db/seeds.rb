@@ -19,7 +19,7 @@ Essay.create(
 	user_id: 1,
 	topic: "Testing",
 	description: "1test",
-	original: "My name is Hank",
+	content: "My name is Hank",
 	revision: "My name is Hank.",
 	word_limit: 100
 )

@@ -1,28 +1,26 @@
 = form_for :essay, url: essays_path do |f|
+	- if @essay.errors.any?
+		- flash.each do |message_type, message|
+			%div{:class => "alert alert-#{message_type}"}= message
 
-  - if @essay.errors.any?
-    - flash.each do |message_type, message|
-      %div{:class => "alert alert-#{message_type}"}= message
+	.form-group
+		= f.label :topic
+		%br
+		= f.text_field :topic, class: 'form-control', placeholder: "What are you most excited about or looking forward to in your college experience?"
 
-  .form-group
-    = f.label :topic
-    %br
-    = f.text_field :topic, class: 'form-control', placeholder: "What are you most excited about or looking forward to in your college experience?"
+	.form-group
+		= f.label :description
+		%br
+		= f.text_field :description, class: 'form-control', placeholder: "Personal statement for Harvard University"
+	.form-group
+		= f.label :content
+		%br
+		= f.text_area :content, class: 'form-control'
 
-
-  .form-group
-    = f.label :description
-    %br
-    = f.text_field :description, class: 'form-control', placeholder: "Personal statement for Harvard University"
-
-  .form-group
-    = f.label :content
-    %br
-    = f.text_area :original, class: 'form-control'
-
-  .form-group
-    = f.label :word_limit
-    %br
-    = f.number_field :word_limit, class: 'form-control'
-  .form-group
-    = f.submit :'submit', class: 'btn btn-success'
+	.form-group
+		= f.label :words_limit
+		%br
+		= f.number_field :word_limit, class: 'form-control', placeholder: 150
+	
+	.form-group
+		= f.submit :'submit', class: 'btn btn-success'
