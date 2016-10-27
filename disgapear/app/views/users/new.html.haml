@@ -1,26 +1,68 @@
-%div.container
-  %form.form-inline  
-    .form-group.row
-      %label.col-xs-2.col-form-label{:for => "first-name"}
-      .col-xs-10
-        %input#example-text-input.form-control{:type => "text", :placeholder => "First name"}/
+= form_for :user, url: users_path do |f|
 
-    .form-group.row
-      %label.col-xs-2.col-form-label{:for => "last_name"}
-      .col-xs-10
-        %input#example-text-input.form-control{:type => "text", :placeholder => "Last name"}/
+  - if @user.errors.any?
+    - flash.each do |message_type, message|
+      %div{:class => "alert alert-#{message_type}"}= message
 
-  .form-group.row
-    %label.col-xs-2.col-form-label{:for => "email"} Email
-    .col-xs-10
-      %input#example-email-input.form-control{:type => "email", :placeholder => "disgapear@example.com"}/
+  .form-group
+    = f.label :first_name
+    %br
+    = f.text_field :first_name, class: 'form-control'
 
-  .form-group.row
-    %label.col-xs-2.col-form-label{:for => "password"} Password
-    .col-xs-10
-      %input#example-password-input.form-control{:type => "password"}/
-  .form-group.row
-    %label.col-xs-2.col-form-label{:for => "comfirm password"} Confirm Password
-    .col-xs-10
-      %input#example-password-input.form-control{:type => "password"}/
-  %button.btn.btn-primary{:type => "submit"} Submit
+
+  .form-group
+    = f.label :last_name
+    %br
+    = f.text_field :last_name, class: 'form-control'
+
+  .form-group
+    = f.label :email
+    %br
+    = f.text_field :email, class: 'form-control'
+
+  .form-group
+    = f.label :password
+    %br
+    = f.password_field :password, class: 'form-control'
+
+  .form-group
+    = f.label :confirm_password
+    %br
+    = f.password_field :confirm_password, class: 'form-control'
+
+  .form-group
+    = f.submit :'submit', class: 'btn btn-success'
+
+
+
+
+
+/ %div.container
+/   %form.form-inline  
+/     .form-group.row
+/       %label.col-xs-2.col-form-label{:for => "first-name"}
+/       .col-xs-10
+/         %input#example-text-input.form-control{:type => "text", :placeholder => "First name"}/
+
+/     .form-group.row
+/       %label.col-xs-2.col-form-label{:for => "last_name"}
+/       .col-xs-10
+/         %input#example-text-input.form-control{:type => "text", :placeholder => "Last name"}/
+
+/   .form-group.row
+/     %label.col-xs-2.col-form-label{:for => "email"} Email
+/     .col-xs-10
+/       %input#example-email-input.form-control{:type => "email", :placeholder => "disgapear@example.com"}/
+
+/   .form-group.row
+/     %label.col-xs-2.col-form-label{:for => "password"} Password
+/     .col-xs-10
+/       %input#example-password-input.form-control{:type => "password"}/
+/   .form-group.row
+/     %label.col-xs-2.col-form-label{:for => "comfirm password"} Confirm Password
+/     .col-xs-10
+/       %input#example-password-input.form-control{:type => "password"}/
+/   %a.btn.btn-primary{:type => "submit"} Submit
+
+
+

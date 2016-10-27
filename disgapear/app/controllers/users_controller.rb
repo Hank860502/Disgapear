@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       if @user.save
         flash[:success] = "You have been Registered!"
         session[:user_id] = @user.id
-        format.html { redirect_to home_index_path, notice: 'User was successfully created.' }
+        format.html { redirect_to root_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
         # redirect_to root_path
       else
@@ -26,8 +26,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @guide = User.find(params[:id])
-    
+    @user = User.find(params[:id])
   end
 
   def user_params
