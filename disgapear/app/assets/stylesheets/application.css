@@ -18,8 +18,11 @@
  */
 
 /* Links */
+.brand {
+  display: inline-block;
+}
 
-img {
+.img {
   position: absolute;
   top: 0;
   left: 0;
