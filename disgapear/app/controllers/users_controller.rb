@@ -7,10 +7,12 @@ class UsersController < ApplicationController
   end
 
   def create
+  	p "=================="
+  	p user_params
+  	p "=================="
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        flash[:success] = "You have been Registered!"
         session[:user_id] = @user.id
         format.html { redirect_to root_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
@@ -30,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name,:email,:password)
+    params.require(:user).permit(:first_name, :last_name, :email,:password)
   end
 
 end
