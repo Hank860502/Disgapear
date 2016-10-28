@@ -30,8 +30,17 @@ class EssaysController < ApplicationController
     @user= User.find(@essay.user_id)
 	end
 
-  def 
+  def edit
+    p "+++++++"
+    @essay=Essay.find(params[:id])
+  end
+
+  def update
+    p "=========="
     @essay= Essay.find(params[:id])
+    @essay.revision = "dsfdsf"
+    @essay.save
+    redirect_to essay_path(@essay)
   end
 
 	private

@@ -1,0 +1,28 @@
+%div.container 
+  = form_for :essay, url: essay_path(@essay.id)do |f|
+    .form-group
+      = f.label :topic
+      %br
+      = f.text_field :topic, class: 'form-control', disabled: "disabled"
+
+    .form-group
+      = f.label :description
+      %br
+      = f.text_field :description, class: 'form-control', disabled: "disabled"
+    .form-group
+      = f.label :content
+      %br
+      = f.text_area :content, class: 'form-control', disabled: "disabled"
+
+    .form-group
+      = f.label :revision
+      %br
+      = f.text_area :revision, class: 'form-control'
+
+    .form-group
+      = f.label :words_limit
+      %br
+      = f.number_field :word_limit, class: 'form-control', disabled: "disabled"
+    
+    .form-group
+      = f.submit :'submit', class: 'btn btn-success'
