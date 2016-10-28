@@ -1,0 +1,49 @@
+%div.container 
+  %table.table
+    %tbody
+      %tr
+        %th{:scope => "row"} Topic
+        %td
+          =@essay.topic
+      %tr
+        %th{:scope => "row"} Content
+        %td
+          =@essay.content
+
+      %tr
+        %th{:scope => "row"} Revision
+        %td
+          =@essay.revision
+              
+      %tr
+        %th{:scope => "row"} User name
+        %td
+          =@user.last_name         
+      %tr
+        %th{:scope => "row"} Description
+        %td
+          =@essay.description
+      %tr
+        %th{:scope => "row"} Word limit
+        %td
+          =@essay.word_limit
+
+
+%div.container 
+  .panel.panel-default
+    / Default panel contents
+    .panel-heading
+      =@essay.topic
+    .panel-body
+      %p
+        =@essay.content
+    / List group
+    %ul.list-group
+      %li.list-group-item
+        =@essay.revision
+      %li.list-group-item 
+        =@user.last_name
+      %li.list-group-item
+        =@essay.description
+      %li.list-group-item
+        =@essay.word_limit
