@@ -9,17 +9,11 @@ class EssaysController < ApplicationController
 	def create
     @essay = Essay.new(essay_params)
     @essay.user_id = current_user.id
-    p '================'
-    p @essay
-    p '================'
     respond_to do |format|
       if @essay.save
         # session[:essay_id] = @essay.id
         format.html { redirect_to essay_path(@essay), notice: 'Essay was successfully created.' }
         format.json { render :show, status: :created, location: @essay }
-        p '++++++++++++'
-        p @essay
-        p '++++++++++++'
         # redirect_to root_path
       else
         flash[:danger] = @essay.errors.full_messages.to_sentence
@@ -33,6 +27,7 @@ class EssaysController < ApplicationController
 
 	def show
 		@essay= Essay.find(params[:id])
+    @user= User.find(@essay.user_id)
 	end
 
 	private
