@@ -15,7 +15,7 @@ class EssaysController < ApplicationController
     respond_to do |format|
       if @essay.save
         # session[:essay_id] = @essay.id
-        format.html { redirect_to essays_path, notice: 'Essay was successfully created.' }
+        format.html { redirect_to essay_path(@essay), notice: 'Essay was successfully created.' }
         format.json { render :show, status: :created, location: @essay }
         p '++++++++++++'
         p @essay
