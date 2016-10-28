@@ -36,9 +36,8 @@ class EssaysController < ApplicationController
   end
 
   def update
-    p "=========="
     @essay= Essay.find(params[:id])
-    @essay.revision = "dsfdsf"
+    @essay.revision = params[:essay][:revision]
     @essay.save
     redirect_to essay_path(@essay)
   end
