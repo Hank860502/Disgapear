@@ -30,6 +30,10 @@ class EssaysController < ApplicationController
     @user= User.find(@essay.user_id)
 	end
 
+  def 
+    @essay= Essay.find(params[:id])
+  end
+
 	private
 
 	def essay_params
