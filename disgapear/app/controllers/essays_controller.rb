@@ -4,13 +4,15 @@ class EssaysController < ApplicationController
 
 	def new
 		@essay = Essay.new
+    @user = current_user
 	end
 
 	def create
     @essay = Essay.new(essay_params)
+
     respond_to do |format|
       if @essay.save
-        session[:essay_id] = @essay.id
+        # session[:essay_id] = @essay.id
         format.html { redirect_to essays_path, notice: 'Essay was successfully created.' }
         format.json { render :show, status: :created, location: @essay }
         # redirect_to root_path
